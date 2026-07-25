@@ -1,4 +1,4 @@
-﻿int[] nums = [0, 1, 2, 2, 3, 0, 4, 2];
+﻿int[] nums = [3, 2, 2, 3];
 int value = 2;
 int result = RemoveElement(nums, value);
 Console.WriteLine(result + " [" + string.Join(", ", nums.Take(result)) + "]");

@@ -1,6 +1,7 @@
-﻿Console.WriteLine(MajorityElement([2, 2, 1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6]));
+﻿Console.WriteLine(RemoveDuplicates([6, 5, 5]));
 
-static int MajorityElement(int[] nums)
+
+static int RemoveDuplicates(int[] nums)
 {
     int count = 0;
     int candidate = 0;
