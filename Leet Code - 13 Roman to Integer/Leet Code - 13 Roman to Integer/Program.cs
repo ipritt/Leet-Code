@@ -14,7 +14,7 @@ int RomanToInt(string s)
                 i++;
                 continue;
             }
-            if(s[i] == 'I' && s[i + 1] == 'X')
+            if (s[i] == 'I' && s[i + 1] == 'X')
             {
                 result += 9;
                 i++;
@@ -74,7 +74,7 @@ int RomanToInt(string s)
             default:
                 break;
         }
-            
+
     }
 
     return result;

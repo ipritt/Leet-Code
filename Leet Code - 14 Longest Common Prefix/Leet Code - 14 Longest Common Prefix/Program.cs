@@ -24,7 +24,7 @@ string LongestCommonPrefix(string[] strs)
             }
         }
         
-        if(isMatch)
+        if (isMatch)
         {
             resultString += currentCharBeingChecked;
         }
