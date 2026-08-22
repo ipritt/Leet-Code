@@ -1,4 +1,4 @@
-﻿int[] nums = [3, 2, 2, 3];
+﻿int[] nums = [0, 1, 2, 2, 3, 0, 4, 2];
 int value = 2;
 int result = RemoveElement(nums, value);
 Console.WriteLine(result + " [" + string.Join(", ", nums.Take(result)) + "]");
@@ -11,8 +11,7 @@ int RemoveElement(int[] nums, int val)
     {
         if (nums[j] != val)
         {
-            nums[i] = i > j ? nums[j + 1] : nums[j];
-            if (nums[i] != val) i++;
+            nums[i++] = nums[j];
         }
     }
 
