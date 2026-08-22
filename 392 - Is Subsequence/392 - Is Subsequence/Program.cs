@@ -1,28 +1,22 @@
-﻿Console.WriteLine(IsSubsequence("", "ahbgdc"));
+﻿Console.WriteLine(IsSubsequence("axc", "ahbxdc"));
 
 static bool IsSubsequence(string s, string t)
 {
     if (s.Length == 0) return true;
 
-    int i = 0;
-    bool isSubsequence = false;
+    int leftPointer = 0;
 
-    for (int j = 0; j < t.Length; j++)
+    for (int rightPointer = 0; rightPointer < t.Length; rightPointer++)
     {
-        if (s[i] == t[j])
-        {
-            isSubsequence = true;
-            i++;
+        if (leftPointer >= s.Length) break;
 
-            if (i == s.Length) break;
-        }
-        else
+        if (s[leftPointer] == t[rightPointer])
         {
-            isSubsequence = false;
+            leftPointer++;
         }
     }
 
-    if (i != s.Length) return false;
+    if (leftPointer != s.Length) return false;
 
-    return isSubsequence;
+    return true;
 }
