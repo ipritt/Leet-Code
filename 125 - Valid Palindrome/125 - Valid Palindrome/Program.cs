@@ -1,41 +1,35 @@
 ﻿Console.WriteLine(IsPalindrome("A man, a plan, a canal: Panama"));
 
-bool IsPalindrome(string s)
+static bool IsPalindrome(string s)
 {
-    string alphaNumericString = RemoveNonAlphanumericCharacters(s);
-
-    if (alphaNumericString.Length == 0 || alphaNumericString.Length == 1) return true;
-
-    int leftIndex = 0;
-    int rightIndex = alphaNumericString.Length - 1;
-    bool isPalindrome = false;
-
-    for (int i = 0; i < alphaNumericString.Length / 2; i++)
-    {
-        isPalindrome = alphaNumericString[leftIndex]
-            .Equals(alphaNumericString[rightIndex]);
-
-        if (!isPalindrome) break;
-
-        leftIndex++;
-        rightIndex--;
-    }
-
-    return isPalindrome;
-}
-
-string RemoveNonAlphanumericCharacters(string str)
-{
-    char[] chars = new char[str.Length];
+    // Remove non-alphanumeric chars
+    char[] chars = new char[s.Length];
     int index = 0;
 
-    foreach (char c in str)
+    foreach (char c in s)
     {
         if (char.IsLetterOrDigit(c))
         {
             chars[index++] = char.ToLower(c);
-        }    
+        }
     }
 
-    return new string(chars, 0, index);
+    string alphaNumericString = new(chars, 0, index);
+
+    if (alphaNumericString.Length == 0 || alphaNumericString.Length == 1) return true;
+
+    // Check if the string is a palindrome
+    int rightIndex = alphaNumericString.Length - 1;
+    bool isPalindrome = false;
+
+    for (int leftIndex = 0; leftIndex < alphaNumericString.Length / 2; leftIndex++)
+    {
+        isPalindrome = alphaNumericString[leftIndex] == alphaNumericString[rightIndex];
+
+        if (!isPalindrome) break;
+
+        rightIndex--;
+    }
+
+    return isPalindrome;
 }
