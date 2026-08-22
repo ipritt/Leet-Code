@@ -1,4 +1,4 @@
-﻿Console.WriteLine(IsPalindrome(",; W;:GlG:;l ;,"));
+﻿Console.WriteLine(IsPalindrome("A man, a plan, a canal: Panama"));
 
 bool IsPalindrome(string s)
 {
@@ -12,8 +12,8 @@ bool IsPalindrome(string s)
 
     for (int i = 0; i < alphaNumericString.Length / 2; i++)
     {
-        isPalindrome = alphaNumericString[leftIndex].ToString()
-            .Equals(alphaNumericString[rightIndex].ToString(), StringComparison.CurrentCultureIgnoreCase);
+        isPalindrome = alphaNumericString[leftIndex]
+            .Equals(alphaNumericString[rightIndex]);
 
         if (!isPalindrome) break;
 
@@ -33,7 +33,7 @@ string RemoveNonAlphanumericCharacters(string str)
     {
         if (char.IsLetterOrDigit(c))
         {
-            chars[index++] = c;
+            chars[index++] = char.ToLower(c);
         }    
     }
 
